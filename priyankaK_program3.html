@@ -1,0 +1,49 @@
+															PRIYANKA K
+															1JT18IS047
+
+Prgm3: write a JavaScript code that displays text "TEXT-GROWING" with increasing front size in interval of 100ms in red, when thefont size decreases to 5pt
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> Test shrink</title>
+<style>
+p{
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ }
+</style>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+var var1 = setInterval(inTimer,1000);
+var fs = 5; //font size
+var ids = document.getElementById("demo");
+
+function inTimer()
+{
+ids.innerHTML='TEXTGROWING';
+ids.setAttribute('style',"font-size:"+fs+ "px;color:red");
+fs+=5;
+if(fs>=50)
+{
+ clearInterval(var1); //paused
+ var2=setInterval(deTimer,1000);
+}
+}
+function deTimer() 
+{
+fs-=5;
+ids.innerHTML='TEXTSHRINKING';
+ids.setAttribute('style',"font-size:"+fs+"px;color:blue");
+if(fs===5)
+{
+clearInterval(var2);
+}
+}
+</script>
+</body>
+</html>
